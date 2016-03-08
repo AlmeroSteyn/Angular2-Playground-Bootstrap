@@ -1,0 +1,11 @@
+<div>
+  <ul>
+    <li *ngFor="#name of names | async">
+      <a href="" [routerLink]="['Detail',{id: name.id}]">{{name.firstname}}</a>
+    </li>
+  </ul>
+</div>
+{{testVal}}
+<input class="form-control" [(ngModel)]="testVal">
+{{color}}
+<button (click)="onClick()" [style.color]="color"  class="btn btn-primary">Test</button>
