@@ -34,6 +34,6 @@ app.put('/contacts/:id', function (req, res) {
 var server = app.listen(4000, function () {
     var host = server.address().address;
     var port = server.address().port;
-    console.log('Angular 2 Master Class app server listening at http://%s:%s', host, port);
+    console.log('Test server listening at http://%s:%s', host, port);
 });
 //# sourceMappingURL=server.js.map

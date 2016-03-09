@@ -5,11 +5,13 @@ import {QaDemoDetail} from "./qa-demo-detail.component";
 import {Component} from "angular2/core";
 import {ROUTER_DIRECTIVES} from "angular2/router";
 import {ROUTER_PROVIDERS} from "angular2/router";
+import {HTTP_PROVIDERS} from "angular2/http";
+import {QaDemoContacts} from "../services/qa-demo-contacts.service";
 
 @Component({
   selector: 'qa-demo',
   template: '<router-outlet></router-outlet>',
-  providers: [ROUTER_PROVIDERS],
+  providers: [ROUTER_PROVIDERS, HTTP_PROVIDERS, QaDemoContacts],
   directives: [ROUTER_DIRECTIVES]
 
 })
