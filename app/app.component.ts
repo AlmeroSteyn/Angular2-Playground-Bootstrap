@@ -4,9 +4,10 @@ import {AppList} from "./app-list.component";
 import {AppDetail} from "./app-detail.component";
 import {ROUTER_DIRECTIVES} from "angular2/router";
 import {ROUTER_PROVIDERS} from "angular2/router";
-import {AppInfo} from "./app-info.service";
 import {HTTP_PROVIDERS} from "angular2/http";
-import {AppContacts} from "./app-contacts.service";
+import {AppContacts} from "./services/app-contacts.service";
+import {AppInfo} from "./services/app-info.service";
+
 
 @Component({
   selector: 'qa-app',

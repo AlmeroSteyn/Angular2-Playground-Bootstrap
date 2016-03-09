@@ -1,0 +1,21 @@
+import {OnInit} from "angular2/core";
+import {RouteConfig} from "angular2/router";
+import {QaDemoList} from "./qa-demo-list.component";
+import {QaDemoDetail} from "./qa-demo-detail.component";
+import {Component} from "angular2/core";
+import {ROUTER_DIRECTIVES} from "angular2/router";
+import {ROUTER_PROVIDERS} from "angular2/router";
+
+@Component({
+  selector: 'qa-demo',
+  template: '<router-outlet></router-outlet>',
+  providers: [ROUTER_PROVIDERS],
+  directives: [ROUTER_DIRECTIVES]
+
+})
+@RouteConfig([
+  {path: '/', name:'List', component: QaDemoList},
+  {path: '/detail', name: 'Detail', component: QaDemoDetail}
+])
+export class QaDemo{
+}

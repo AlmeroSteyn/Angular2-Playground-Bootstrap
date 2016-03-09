@@ -1,1 +1,2 @@
 <div>{{person.firstname}}{{person.lastname}}</div>
+<app-data [myValue]="person.firstname" (myEvent)="handleEvent($event)"></app-data>

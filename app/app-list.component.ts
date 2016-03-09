@@ -1,9 +1,9 @@
 import {OnInit} from "angular2/core";
 import {Component} from "angular2/core";
-import {AppInfo} from "./app-info.service";
+import {AppInfo} from "./services/app-info.service";
 import {CORE_DIRECTIVES} from "angular2/common";
 import {ROUTER_DIRECTIVES} from "angular2/router";
-import {AppContacts} from "./app-contacts.service";
+import {AppContacts} from "./services/app-contacts.service";
 import {FORM_DIRECTIVES} from "angular2/common";
 
 @Component({
