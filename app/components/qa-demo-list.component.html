@@ -1,7 +1,9 @@
 <div>
   <ul>
     <li *ngFor="#item of items | async">
-      {{item.firstname}}
+      <a href="" [routerLink]="['Detail',{id: item.id}]">
+        {{item.firstname}} {{item.lastname}}
+      </a>
     </li>
   </ul>
 </div>

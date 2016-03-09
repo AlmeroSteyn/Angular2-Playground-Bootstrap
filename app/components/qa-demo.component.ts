@@ -17,7 +17,7 @@ import {QaDemoContacts} from "../services/qa-demo-contacts.service";
 })
 @RouteConfig([
   {path: '/', name:'List', component: QaDemoList},
-  {path: '/detail', name: 'Detail', component: QaDemoDetail}
+  {path: '/detail/:id', name: 'Detail', component: QaDemoDetail}
 ])
 export class QaDemo{
 }
