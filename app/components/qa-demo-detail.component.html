@@ -1,1 +1,4 @@
-<div>{{itemEntry?.firstname}}</div>
+<div>
+  <h1>This is the page of {{itemEntry?.firstname}} {{itemEntry?.lastname}}</h1>
+</div>
+<qa-demo-edit-person *ngIf="itemEntry" [person]="itemEntry" (onChange)="save($event)"></qa-demo-edit-person>

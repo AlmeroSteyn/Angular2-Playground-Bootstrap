@@ -13,7 +13,6 @@ import {QaDemoContacts} from "../services/qa-demo-contacts.service";
   template: '<router-outlet></router-outlet>',
   providers: [ROUTER_PROVIDERS, HTTP_PROVIDERS, QaDemoContacts],
   directives: [ROUTER_DIRECTIVES]
-
 })
 @RouteConfig([
   {path: '/', name:'List', component: QaDemoList},
