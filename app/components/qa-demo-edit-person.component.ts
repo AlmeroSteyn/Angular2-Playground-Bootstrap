@@ -21,6 +21,7 @@ export class QaDemoEditPerson implements OnInit{
 
   save():void {
     this.onChange.emit(this.internalItem);
+    this.internalItem = new Contact();
   }
 
   ngOnInit(){

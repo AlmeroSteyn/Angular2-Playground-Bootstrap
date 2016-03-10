@@ -5,6 +5,7 @@ import {QaDemoContacts} from "../services/qa-demo-contacts.service";
 import {RouteParams} from "angular2/router";
 import {QaDemoEditPerson} from "./qa-demo-edit-person.component";
 import {CORE_DIRECTIVES} from "angular2/common";
+import {Router} from "angular2/router";
 
 @Component({
   selector: 'qa-demo-detail',
@@ -15,12 +16,12 @@ export class QaDemoDetail implements OnInit{
 
   itemEntry: IContact;
 
-  constructor(private contacts: QaDemoContacts, private params: RouteParams ){}
+  constructor(private contacts: QaDemoContacts, private params: RouteParams, private router: Router ){}
 
   save(arg: IContact){
     this.contacts.putContact(arg)
     .subscribe(
-      (item:IContact) => this.itemEntry = item
+      () => this.router.navigate(['List'])
     );
   }
 
