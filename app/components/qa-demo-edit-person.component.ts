@@ -1,13 +1,9 @@
 import {Component} from "angular2/core";
 import {Input} from "angular2/core";
 import {Output} from "angular2/core";
-import {IContact} from "../models/contact.model";
 import {EventEmitter} from "angular2/core";
 import {FORM_DIRECTIVES} from "angular2/common";
-import {OnInit} from "angular2/core";
-import {Contact} from "../models/contact.model";
-import {Observable} from "rxjs/Observable";
-import {ChangeDetectionStrategy} from "angular2/core";
+import {Contact, IContact} from "../models/contact.model";
 import {OnChanges} from "angular2/core";
 
 @Component({
