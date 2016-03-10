@@ -6,6 +6,7 @@ import {RouteParams} from "angular2/router";
 import {QaDemoEditPerson} from "./qa-demo-edit-person.component";
 import {CORE_DIRECTIVES} from "angular2/common";
 import {Router} from "angular2/router";
+import {Observable} from "rxjs/Observable";
 
 @Component({
   selector: 'qa-demo-detail',
@@ -14,7 +15,7 @@ import {Router} from "angular2/router";
 })
 export class QaDemoDetail implements OnInit{
 
-  itemEntry: IContact;
+  itemEntry: Observable<IContact>;
 
   constructor(private contacts: QaDemoContacts, private params: RouteParams, private router: Router ){}
 
@@ -26,10 +27,7 @@ export class QaDemoDetail implements OnInit{
   }
 
   ngOnInit():void {
-    this.contacts.getContact(this.params.get('id'))
-    .subscribe(
-      item => this.itemEntry = item
-    );
+    this.itemEntry = this.contacts.getContact(this.params.get('id'));
   }
 
 }
