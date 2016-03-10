@@ -43,12 +43,12 @@ app.put('/contacts/:id', function (req, res) {
   }
 });
 
-app.post('/contacts/:id', function (req, res){
+app.post('/contacts', function (req, res){
   let maxId: number = db[db.length -1].id;
   let contact = req.body;
   contact.id = maxId + 1;
   db.push(contact);
-  res.json(singleResponse(contact));
+  res.json(multipleResponse(db));
   });
 
 var server = app.listen(4000, function () {

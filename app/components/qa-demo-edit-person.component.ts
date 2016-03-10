@@ -5,6 +5,7 @@ import {IContact} from "../models/contact.model";
 import {EventEmitter} from "angular2/core";
 import {FORM_DIRECTIVES} from "angular2/common";
 import {OnInit} from "angular2/core";
+import {Contact} from "../models/contact.model";
 
 @Component({
   selector: 'qa-demo-edit-person',
@@ -23,11 +24,15 @@ export class QaDemoEditPerson implements OnInit{
   }
 
   ngOnInit(){
-    this.internalItem = {
-      id: this.person.id,
-      firstname: this.person.firstname,
-      lastname: this.person.lastname
-    };
+    if(this.person) {
+      this.internalItem = {
+        id: this.person.id,
+        firstname: this.person.firstname,
+        lastname: this.person.lastname
+      };
+    }else {
+      this.internalItem = new Contact();
+    }
   }
 
 }

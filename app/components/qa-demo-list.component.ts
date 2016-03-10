@@ -5,11 +5,13 @@ import {QaDemoContacts} from "../services/qa-demo-contacts.service";
 import {Observable} from "rxjs/Observable";
 import {CORE_DIRECTIVES} from "angular2/common";
 import {ROUTER_DIRECTIVES} from "angular2/router";
+import {QaDemoEditPerson} from "./qa-demo-edit-person.component";
+import {Contact} from "../models/contact.model";
 
 @Component({
   selector: 'qa-demo-list',
   templateUrl: './app/components/qa-demo-list.component.html',
-  directives: [CORE_DIRECTIVES, ROUTER_DIRECTIVES]
+  directives: [CORE_DIRECTIVES, ROUTER_DIRECTIVES, QaDemoEditPerson]
 })
 
 export class QaDemoList implements OnInit{
@@ -19,7 +21,20 @@ export class QaDemoList implements OnInit{
     constructor(private contacts: QaDemoContacts){
     }
 
+    save(arg: IContact){
+      this.contacts.postContact(arg)
+      .subscribe(
+        () => {
+          this.loadList();
+        }
+      );
+    }
+
     ngOnInit():void {
+      this.loadList();
+    }
+
+    private loadList(){
       this.items = this.contacts.getContacts();
     }
 

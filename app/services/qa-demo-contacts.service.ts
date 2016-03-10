@@ -32,7 +32,7 @@ export class QaDemoContacts {
   postContact(contact:IContact):Observable<IContact> {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.put(`${this.API_ENDPOINT}/contacts/${contact.id}`, JSON.stringify(contact), {headers: headers})
+    return this.http.post(`${this.API_ENDPOINT}/contacts`, JSON.stringify(contact), {headers: headers})
       .map(res => res.json().item)
   }
 
