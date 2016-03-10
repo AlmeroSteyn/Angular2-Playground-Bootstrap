@@ -9,30 +9,31 @@ export class QaDemoContacts {
 
   private API_ENDPOINT = 'http://localhost:4000';
 
-  constructor(private http:Http){}
+  constructor(private http:Http) {
+  }
 
-  getContacts(): Observable<IContact[]>{
+  getContacts():Observable<IContact[]> {
     return this.http.get(`${this.API_ENDPOINT}/contacts`)
-    .map(res => res.json().items);
+      .map(res => res.json().items);
   }
 
-  getContact(id:string): Observable<IContact>{
+  getContact(id:string):Observable<IContact> {
     return this.http.get(`${this.API_ENDPOINT}/contacts/${id}`)
-    .map(res => res.json().item);
+      .map(res => res.json().item);
   }
 
-  putContact(contact: IContact): Observable<IContact>{
+  putContact(contact:IContact):Observable<IContact> {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.put(`${this.API_ENDPOINT}/contacts/${contact.id}`, JSON.stringify(contact), {headers:headers})
-    .map(res => res.json().item);
+    return this.http.put(`${this.API_ENDPOINT}/contacts/${contact.id}`, JSON.stringify(contact), {headers: headers})
+      .map(res => res.json().item);
   }
 
-  postContact(contact: IContact): Observable<IContact>{
+  postContact(contact:IContact):Observable<IContact> {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.put(`${this.API_ENDPOINT}/contacts/${contact.id}`, JSON.stringify(contact), {headers:headers})
-    .map(res => res.json().item)
+    return this.http.put(`${this.API_ENDPOINT}/contacts/${contact.id}`, JSON.stringify(contact), {headers: headers})
+      .map(res => res.json().item)
   }
 
 }
