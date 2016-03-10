@@ -43,6 +43,14 @@ app.put('/contacts/:id', function (req, res) {
   }
 });
 
+app.post('/contacts/:id', function (req, res){
+  let maxId: number = db[db.length -1].id;
+  let contact = req.body;
+  contact.id = maxId + 1;
+  db.push(contact);
+  res.json(singleResponse(contact));
+  });
+
 var server = app.listen(4000, function () {
   var host = server.address().address;
   var port = server.address().port;

@@ -18,7 +18,10 @@ export class QaDemoDetail implements OnInit{
   constructor(private contacts: QaDemoContacts, private params: RouteParams ){}
 
   save(arg: IContact){
-    console.log(arg);
+    this.contacts.putContact(arg)
+    .subscribe(
+      (item:IContact) => this.itemEntry = item
+    );
   }
 
   ngOnInit():void {
