@@ -25,7 +25,7 @@ export class QaDemoEditPerson implements OnChanges {
     }
   }
 
-  save():void {
+  onSave():void {
     this.onChange.emit(this.internalItem);
   }
 
