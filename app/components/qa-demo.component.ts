@@ -7,11 +7,12 @@ import {ROUTER_DIRECTIVES} from "angular2/router";
 import {ROUTER_PROVIDERS} from "angular2/router";
 import {HTTP_PROVIDERS} from "angular2/http";
 import {QaDemoContacts} from "../services/qa-demo-contacts.service";
+import {QaValidators} from "../services/qa-validators.service";
 
 @Component({
   selector: 'qa-demo',
   template: '<router-outlet></router-outlet>',
-  providers: [ROUTER_PROVIDERS, HTTP_PROVIDERS, QaDemoContacts],
+  providers: [ROUTER_PROVIDERS, HTTP_PROVIDERS, QaDemoContacts, QaValidators],
   directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([

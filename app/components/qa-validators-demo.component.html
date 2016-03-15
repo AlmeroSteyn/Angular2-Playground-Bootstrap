@@ -1,0 +1,8 @@
+<form [ngFormModel]="demoForm" #formHandle="ngForm">
+  <label for="divTen">Divisible by ten
+     <input class="form-control"
+            id="divTen"
+            ngControl="divNumber">
+  </label>
+  <button class="btn btn-primary" [disabled]="!formHandle.form.valid">Submit</button>
+</form>

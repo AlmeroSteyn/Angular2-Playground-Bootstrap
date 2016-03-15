@@ -7,11 +7,12 @@ import {CORE_DIRECTIVES} from "angular2/common";
 import {ROUTER_DIRECTIVES} from "angular2/router";
 import {QaDemoEditPerson} from "./qa-demo-edit-person.component";
 import {Contact} from "../models/contact.model";
+import {QaValidatorsDemo} from "./qa-validators-demo.component";
 
 @Component({
   selector: 'qa-demo-list',
   templateUrl: './app/components/qa-demo-list.component.html',
-  directives: [CORE_DIRECTIVES, ROUTER_DIRECTIVES, QaDemoEditPerson]
+  directives: [CORE_DIRECTIVES, ROUTER_DIRECTIVES, QaDemoEditPerson, QaValidatorsDemo]
 })
 
 export class QaDemoList implements OnInit{
