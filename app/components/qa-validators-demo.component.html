@@ -3,7 +3,7 @@
      <input class="form-control"
             type="text"
             id="divTen"
-            ngControl="divNumber"
+            [ngFormControl]="demoForm.find('divNumber')"
             qaLengthValidator>
     {{demoForm.find('divNumber').errors | json}}
   </label>
