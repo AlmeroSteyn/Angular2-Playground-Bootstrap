@@ -3,7 +3,6 @@
   <qa-input [labelText]="'Divisible by ten'" [isError]="!divNumber.valid">
     <input class="form-control"
            type="text"
-           id="divTen"
            [ngFormControl]="divNumber"
            qaLengthValidator>
     <qa-input-errors>
@@ -18,6 +17,24 @@
       </qa-input-error>
     </qa-input-errors>
   </qa-input>
+
+  <qa-input-style [labelText]="'Divisible by ten'" [isError]="!divNumberStyle.valid">
+    <input class="form-control"
+           type="text"
+           [ngFormControl]="divNumberStyle"
+           qaLengthValidator>
+    <qa-input-errors>
+      <span class="help-block" *ngIf="divNumberStyle.hasError('required')">
+        It is required
+      </span>
+      <span class="help-block" *ngIf="divNumberStyle.hasError('divisibleByTen')">
+        It is not divisible by ten
+      </span>
+      <span class="help-block" *ngIf="divNumberStyle.hasError('underSeven')">
+        It should at least be seven long
+      </span>
+    </qa-input-errors>
+  </qa-input-style>
 
   {{demoForm.find('divNumber').errors | json}}
   <button class="btn btn-primary" [disabled]="!formHandle.form.valid">Submit</button>

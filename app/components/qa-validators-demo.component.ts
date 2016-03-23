@@ -7,31 +7,29 @@ import {Validators} from "angular2/common";
 import {QaLengthValidator} from "../directives/qa-length-validator.directive";
 import {QaInput} from "./qa-input.component";
 import {QaInputEror} from "./qa-input-error.component";
+import {QaInputStyle} from "./qa-input-style.component";
 
 @Component({
   selector: 'qa-validators-demo',
   templateUrl: './app/components/qa-validators-demo.component.html',
-  directives: [QaLengthValidator, QaInput, QaInputEror]
+  directives: [QaLengthValidator, QaInput, QaInputEror, QaInputStyle]
 })
 export class QaValidatorsDemo implements OnInit {
 
   demoForm:ControlGroup;
   divNumber: AbstractControl;
-
-  // divNumberErrorMessage: any = {
-  //   required: 'A value is required',
-  //   divisibleByTen: 'The number is not divisible by 10',
-  //   underSeven: 'The number should be seven digits long'
-  // };
+  divNumberStyle: AbstractControl;
 
   constructor(private qaValidators:QaValidators, private formBuilder:FormBuilder) {
   }
 
   ngOnInit() {
     this.demoForm = this.formBuilder.group({
-      'divNumber': ['',Validators.compose([ Validators.required, this.qaValidators.divisibleByTen])]
+      'divNumber': ['',Validators.compose([ Validators.required, this.qaValidators.divisibleByTen])],
+      'divNumberStyle': ['',Validators.compose([ Validators.required, this.qaValidators.divisibleByTen])]
     });
 
     this.divNumber = this.demoForm.find('divNumber');
+    this.divNumberStyle = this.demoForm.find('divNumberStyle');
   }
 }
