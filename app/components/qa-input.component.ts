@@ -10,11 +10,13 @@ export class QaInput implements DoCheck {
 
   @Input()
   labelText:string = '';
+  @Input()
+  isError:boolean = false;
   @ContentChildren(QaInputEror)
   errors:QueryList<QaInputEror>;
 
   ngDoCheck():void {
-    if (this.errors && this.errors.length > 1) {
+    if (this.errors) {
       this.errors.toArray().forEach(
         (error:QaInputEror, i:number) => {
           if (i == 0) {

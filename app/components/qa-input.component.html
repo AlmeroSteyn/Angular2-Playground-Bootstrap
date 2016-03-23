@@ -1,4 +1,4 @@
-<div class="form-group has-success">
+<div class="form-group has-error" [ngClass]="{'has-error':isError}">
   <label class="control-label">{{labelText}}
     <ng-content select="input"></ng-content>
   </label>
