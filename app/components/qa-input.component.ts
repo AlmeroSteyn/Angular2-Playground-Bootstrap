@@ -15,6 +15,7 @@ export class QaInput implements DoCheck {
 
   ngDoCheck():void {
     if (this.errors) {
+      console.log('run');
       this.errors.toArray().forEach(
         (error:QaInputEror, i:number) => {
           if (i == 0) {
