@@ -12,14 +12,14 @@ export class QaInputObject implements OnChanges {
   inputErrors:any;
   @Input()
   errorDefs:any;
-  
+
   errorMessage: string = '';
 
   ngOnChanges(changes:any):void {
     var errors: any = changes.inputErrors.currentValue;
     this.errorMessage = '';
     if(errors){
-      Object.keys(this.errorDefs).some((key:string, index:number, values: Array<any>):boolean => {
+      Object.keys(this.errorDefs).some(key => {
         if(errors[key]){
           this.errorMessage = this.errorDefs[key];
           return true;
