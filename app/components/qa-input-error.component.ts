@@ -7,13 +7,13 @@ import {CORE_DIRECTIVES} from "angular2/common";
   directives: [CORE_DIRECTIVES]
 })
 export class QaInputError {
-  showErrorFlag: boolean = true;
+  showErrorFlag:boolean = true;
 
-  hideError():void{
+  hideError():void {
     this.showErrorFlag = false;
   }
 
-  showError():void{
+  showError():void {
     this.showErrorFlag = true;
   }
 
