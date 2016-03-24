@@ -39,8 +39,9 @@
   <qa-input-object
     [labelText]="'Divisible by ten'"
     [inputErrors]="divNumberObject.errors"
-    [errorDefs] = "{required: 'It is required.', divisibleByTen: 'It should be divisible by ten',
-    underSeven: 'It should be seven long'}">
+    [errorDefs]="{required: 'It is required.',
+                  divisibleByTen: 'It should be divisible by ten',
+                  underSeven: 'It should be seven long'}">
     <input class="form-control"
            type="text"
            [ngFormControl]="divNumberObject"
