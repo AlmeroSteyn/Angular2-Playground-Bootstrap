@@ -1,4 +1,4 @@
-import {Component, Input} from "angular2/core";
+import {Component} from "angular2/core";
 import {CORE_DIRECTIVES} from "angular2/common";
 
 @Component({
@@ -12,7 +12,7 @@ export class QaInputError {
   hideError():void{
     this.showErrorFlag = false;
   }
-  
+
   showError():void{
     this.showErrorFlag = true;
   }
