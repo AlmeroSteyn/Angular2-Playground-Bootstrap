@@ -1,10 +1,10 @@
 import {Component, Input, ContentChildren, QueryList, DoCheck} from "angular2/core";
-import {QaInputEror} from "./qa-input-error.component";
+import {QaInputError} from "./qa-input-error.component";
 
 @Component({
   selector: 'qa-input',
   templateUrl: './app/components/qa-input.component.html',
-  directives: [QaInputEror]
+  directives: [QaInputError]
 })
 export class QaInput implements DoCheck {
 
@@ -12,13 +12,13 @@ export class QaInput implements DoCheck {
   labelText:string = '';
   @Input()
   isError:boolean = false;
-  @ContentChildren(QaInputEror)
-  errors:QueryList<QaInputEror>;
+  @ContentChildren(QaInputError)
+  errors:QueryList<QaInputError>;
 
   ngDoCheck():void {
     if (this.errors) {
       this.errors.toArray().forEach(
-        (error:QaInputEror, i:number) => {
+        (error:QaInputError, i:number) => {
           if (i == 0) {
             error.showError();
           } else {

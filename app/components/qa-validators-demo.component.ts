@@ -6,14 +6,14 @@ import {ControlGroup} from "angular2/common";
 import {Validators} from "angular2/common";
 import {QaLengthValidator} from "../directives/qa-length-validator.directive";
 import {QaInput} from "./qa-input.component";
-import {QaInputEror} from "./qa-input-error.component";
+import {QaInputError} from "./qa-input-error.component";
 import {QaInputStyle} from "./qa-input-style.component";
 import {QaInputObject} from "./qa-input-object.component";
 
 @Component({
   selector: 'qa-validators-demo',
   templateUrl: './app/components/qa-validators-demo.component.html',
-  directives: [QaLengthValidator, QaInput, QaInputEror, QaInputObject, QaInputStyle]
+  directives: [QaLengthValidator, QaInput, QaInputError, QaInputObject, QaInputStyle]
 })
 export class QaValidatorsDemo implements OnInit {
 

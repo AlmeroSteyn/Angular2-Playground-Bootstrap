@@ -6,9 +6,9 @@ import {CORE_DIRECTIVES} from "angular2/common";
   templateUrl: './app/components/qa-input-error.component.html',
   directives: [CORE_DIRECTIVES]
 })
-export class QaInputEror {
-  private showErrorFlag: boolean = true;
-  
+export class QaInputError {
+  showErrorFlag: boolean = true;
+
   hideError():void{
     this.showErrorFlag = false;
   }
@@ -16,5 +16,5 @@ export class QaInputEror {
   showError():void{
     this.showErrorFlag = true;
   }
-  
+
 }
