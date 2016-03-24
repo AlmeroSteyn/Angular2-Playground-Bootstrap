@@ -2,7 +2,7 @@ import {Component, Input} from "angular2/core";
 
 @Component({
   selector: 'qa-input-style',
-  templateUrl: './app/components/qa-input.component.html',
+  templateUrl: './app/components/qa-input-style.component.html',
   styles: [`
       :host qa-input-errors > :not(:first-child) {
             display: none;

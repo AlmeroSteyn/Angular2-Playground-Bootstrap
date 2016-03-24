@@ -36,6 +36,17 @@
     </qa-input-errors>
   </qa-input-style>
 
-  {{demoForm.find('divNumber').errors | json}}
+  <qa-input-object
+    [labelText]="'Divisible by ten'"
+    [inputErrors]="divNumberObject.errors"
+    [errorDefs] = "{required: 'It is required.', divisibleByTen: 'It should be divisible by ten',
+    underSeven: 'It should be seven long'}">
+    <input class="form-control"
+           type="text"
+           [ngFormControl]="divNumberObject"
+           qaLengthValidator>
+  </qa-input-object>
+
+  {{divNumberObject.errors | json}}
   <button class="btn btn-primary" [disabled]="!formHandle.form.valid">Submit</button>
 </form>
