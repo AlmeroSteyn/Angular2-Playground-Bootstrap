@@ -18,22 +18,22 @@ import {QaInputObject} from "./qa-input-object.component";
 export class QaValidatorsDemo implements OnInit {
 
   demoForm:ControlGroup;
-  divNumber: AbstractControl;
-  divNumberStyle: AbstractControl;
-  divNumberObject: AbstractControl;
+  someNumber:AbstractControl;
+  someNumberStyle:AbstractControl;
+  someNumberObject:AbstractControl;
 
   constructor(private qaValidators:QaValidators, private formBuilder:FormBuilder) {
   }
 
   ngOnInit() {
     this.demoForm = this.formBuilder.group({
-      'divNumber': ['',Validators.compose([ Validators.required, this.qaValidators.divisibleByTen])],
-      'divNumberStyle': ['',Validators.compose([ Validators.required, this.qaValidators.divisibleByTen])],
-      'divNumberObject': ['',Validators.compose([ Validators.required, this.qaValidators.divisibleByTen])]
+      'someNumber': ['', Validators.compose([Validators.required, Validators.minLength(7), this.qaValidators.divisibleByTen])],
+      'someNumberStyle': ['', Validators.compose([Validators.required, Validators.minLength(7), this.qaValidators.divisibleByTen])],
+      'someNumberObject': ['', Validators.compose([Validators.required, Validators.minLength(7), this.qaValidators.divisibleByTen])]
     });
 
-    this.divNumber = this.demoForm.find('divNumber');
-    this.divNumberStyle = this.demoForm.find('divNumberStyle');
-    this.divNumberObject = this.demoForm.find('divNumberObject');
+    this.someNumber = this.demoForm.find('someNumber');
+    this.someNumberStyle = this.demoForm.find('someNumberStyle');
+    this.someNumberObject = this.demoForm.find('someNumberObject');
   }
 }
