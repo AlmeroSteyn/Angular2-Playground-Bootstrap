@@ -1,10 +1,11 @@
 import {Component, Input, ContentChildren, QueryList, DoCheck} from "angular2/core";
+import {CORE_DIRECTIVES} from "angular2/common";
 import {QaInputError} from "./qa-input-error.component";
 
 @Component({
   selector: 'qa-input',
   templateUrl: './app/components/qa-input.component.html',
-  directives: [QaInputError]
+  directives: [QaInputError, CORE_DIRECTIVES]
 })
 export class QaInput implements DoCheck {
 

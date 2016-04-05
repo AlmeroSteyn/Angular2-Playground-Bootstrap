@@ -1,8 +1,7 @@
-<form [ngFormModel]="demoForm" #formHandle="ngForm">
+<form [ngFormModel]="demoForm">
 
   <qa-input [labelText]="'Some number'" [isError]="!someNumber.valid">
     <input class="form-control"
-           type="text"
            [ngFormControl]="someNumber">
     <qa-input-errors>
       <qa-input-error class="help-block" *ngIf="someNumber.hasError('required')">
@@ -19,7 +18,6 @@
 
   <qa-input-style [labelText]="'Some number'" [isError]="!someNumberStyle.valid">
     <input class="form-control"
-           type="text"
            [ngFormControl]="someNumberStyle">
     <qa-input-errors>
       <span class="help-block" *ngIf="someNumberStyle.hasError('required')">
@@ -41,9 +39,10 @@
                   divisibleByTen: 'The number should be divisible by 10',
                   minlength: 'The number should be at least 7 digits'}">
     <input class="form-control"
-           type="text"
            [ngFormControl]="someNumberObject">
   </qa-input-object>
 
-  <button class="btn btn-primary" [disabled]="!formHandle.form.valid">Submit</button>
+  <button class="btn btn-primary" [disabled]="!demoForm.valid">Submit</button>
 </form>
+
+

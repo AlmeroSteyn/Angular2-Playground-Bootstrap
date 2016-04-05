@@ -1,7 +1,7 @@
 import {Component} from "angular2/core";
 import {OnInit} from "angular2/core";
 import {QaValidators} from "../services/qa-validators.service";
-import {FormBuilder, AbstractControl} from "angular2/common";
+import {FormBuilder, AbstractControl, FORM_DIRECTIVES} from "angular2/common";
 import {ControlGroup} from "angular2/common";
 import {Validators} from "angular2/common";
 import {QaLengthValidator} from "../directives/qa-length-validator.directive";
@@ -13,7 +13,7 @@ import {QaInputObject} from "./qa-input-object.component";
 @Component({
   selector: 'qa-validators-demo',
   templateUrl: './app/components/qa-validators-demo.component.html',
-  directives: [QaLengthValidator, QaInput, QaInputError, QaInputObject, QaInputStyle]
+  directives: [QaLengthValidator, QaInput, QaInputError, QaInputObject, QaInputStyle, FORM_DIRECTIVES]
 })
 export class QaValidatorsDemo implements OnInit {
 
