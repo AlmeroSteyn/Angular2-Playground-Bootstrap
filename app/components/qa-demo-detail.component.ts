@@ -1,11 +1,9 @@
-import {OnInit} from "angular2/core";
-import {Component} from "angular2/core";
+import {OnInit, Component} from "@angular/core";
 import {IContact} from "../models/contact.model";
 import {QaDemoContacts} from "../services/qa-demo-contacts.service";
-import {RouteParams} from "angular2/router";
+import {RouteParams, Router} from "@angular/router-deprecated";
 import {QaDemoEditPerson} from "./qa-demo-edit-person.component";
-import {CORE_DIRECTIVES} from "angular2/common";
-import {Router} from "angular2/router";
+import {CORE_DIRECTIVES} from "@angular/common";
 import {Observable} from "rxjs/Observable";
 
 @Component({

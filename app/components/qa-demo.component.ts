@@ -1,8 +1,8 @@
-import {Component} from "angular2/core";
-import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from "angular2/router";
+import {Component} from "@angular/core";
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from "@angular/router-deprecated";
 import {QaDemoList} from "./qa-demo-list.component";
 import {QaDemoDetail} from "./qa-demo-detail.component";
-import {HTTP_PROVIDERS} from "angular2/http";
+import {HTTP_PROVIDERS} from "@angular/http";
 import {QaDemoContacts} from "../services/qa-demo-contacts.service";
 import {QaValidators} from "../services/qa-validators.service";
 

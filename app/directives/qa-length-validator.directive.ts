@@ -1,9 +1,6 @@
-import {Directive} from "angular2/core";
-import {Control} from "angular2/common";
+import {Directive, provide, forwardRef} from "@angular/core";
+import {Control, NG_VALIDATORS} from "@angular/common";
 import {QaValidators} from "../services/qa-validators.service";
-import {NG_VALIDATORS} from "angular2/common";
-import {provide} from "angular2/core";
-import {forwardRef} from "angular2/core";
 
 @Directive({
   selector: '[qaLengthValidator]',

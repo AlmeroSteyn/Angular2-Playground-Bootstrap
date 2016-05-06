@@ -1,15 +1,12 @@
-import {Component} from "angular2/core";
-import {Input} from "angular2/core";
-import {Output} from "angular2/core";
-import {EventEmitter} from "angular2/core";
-import {FORM_DIRECTIVES} from "angular2/common";
+import {Component, Input, Output, EventEmitter, OnChanges} from "@angular/core";
+import {FORM_DIRECTIVES} from "@angular/common";
 import {Contact, IContact} from "../models/contact.model";
-import {OnChanges} from "angular2/core";
+import {A11yInput} from "./a11y-input.component";
 
 @Component({
   selector: 'qa-demo-edit-person',
   templateUrl: './app/components/qa-demo-edit-person.component.html',
-  directives: [FORM_DIRECTIVES]
+  directives: [FORM_DIRECTIVES, A11yInput]
 })
 export class QaDemoEditPerson implements OnChanges {
 

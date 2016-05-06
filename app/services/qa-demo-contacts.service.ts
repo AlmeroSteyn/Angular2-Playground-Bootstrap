@@ -1,8 +1,7 @@
-import {Injectable} from "angular2/core";
-import {Http} from "angular2/http";
+import {Injectable} from "@angular/core";
+import {Http, Headers} from "@angular/http";
 import {IContact} from "../models/contact.model";
 import {Observable} from "rxjs/Observable";
-import {Headers} from "angular2/http";
 
 @Injectable()
 export class QaDemoContacts {

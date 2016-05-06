@@ -1,9 +1,6 @@
-import {Component} from "angular2/core";
-import {OnInit} from "angular2/core";
+import {Component, OnInit} from "@angular/core";
 import {QaValidators} from "../services/qa-validators.service";
-import {FormBuilder, AbstractControl, FORM_DIRECTIVES} from "angular2/common";
-import {ControlGroup} from "angular2/common";
-import {Validators} from "angular2/common";
+import {FormBuilder, AbstractControl, FORM_DIRECTIVES, ControlGroup, Validators} from "@angular/common";
 import {QaLengthValidator} from "../directives/qa-length-validator.directive";
 import {QaInput} from "./qa-input.component";
 import {QaInputError} from "./qa-input-error.component";
