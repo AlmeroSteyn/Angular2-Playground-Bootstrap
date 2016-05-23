@@ -16,6 +16,11 @@ export class QaDemoContacts {
       .map(res => res.json().items);
   }
 
+  getContactsSlow():Observable<IContact[]> {
+    return this.http.get(`${this.API_ENDPOINT}/contactsslow`)
+      .map(res => res.json().items);
+  }
+  
   getContact(id:string):Observable<IContact> {
     return this.http.get(`${this.API_ENDPOINT}/contacts/${id}`)
       .map(res => res.json().item);

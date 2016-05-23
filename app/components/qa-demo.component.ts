@@ -5,6 +5,7 @@ import {QaDemoDetail} from "./qa-demo-detail.component";
 import {HTTP_PROVIDERS} from "@angular/http";
 import {QaDemoContacts} from "../services/qa-demo-contacts.service";
 import {QaValidators} from "../services/qa-validators.service";
+import {QaDemoSlow} from "./qa-demo-slow.component";
 
 @Component({
   selector: 'qa-demo',
@@ -14,7 +15,8 @@ import {QaValidators} from "../services/qa-validators.service";
 })
 @RouteConfig([
   {path: '/', name:'List', component: QaDemoList},
-  {path: '/detail/:id', name: 'Detail', component: QaDemoDetail}
+  {path: '/detail/:id', name: 'Detail', component: QaDemoDetail},
+  {path: '/demoslow', name: 'DemoSlow', component: QaDemoSlow}
 ])
 export class QaDemo{
 }

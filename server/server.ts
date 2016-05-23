@@ -27,6 +27,12 @@ app.get('/contacts', function (req, res) {
   res.json(multipleResponse(db));
 });
 
+app.get('/contactsslow', function (req, res) {
+  setTimeout(() =>{
+    res.json(multipleResponse(db));
+  }, 3000);
+});
+
 app.get('/contacts/:id', function (req, res) {
   let contact = db.find(contact => contact.id == req.params.id);
   contact ? res.json(singleResponse(contact)) : res.status(404).json({ error: 'contact not found'});
